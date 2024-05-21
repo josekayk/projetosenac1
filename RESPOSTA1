@@ -1,0 +1,23 @@
+def classificar_idades(idades):
+  classificacoes = {
+    "crianca": 0,
+    "adolecente": 0,
+    "adulto": 0,
+    "idoso": 0,
+}
+for idade in  idades:
+  if idade < 13 :
+      Classificacoes["crianca"] += 1
+elif idade < 18:
+       Classificacoes["adolecente"] += 1
+elif idade < 60:
+       Classificacoes["adulto"] += 1
+else:
+       Classificacoes["idoso"] += 1
+
+return classificacoes
+
+
+#Exemplo de uso:
+idades = [3, 14, 25, 67, 12, 18, 40, 80]
+print(classificar_idades(idades))
