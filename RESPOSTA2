@@ -1,0 +1,30 @@
+def converter_unidades():
+    while True:
+        print("\nEscolha a conversão deselada:")
+        print("1. Metros para Quilômetros")
+        print("2. gramas para Quilogramas")
+        print("3. Centimretros para Metros")
+        print("4. Sair")
+        escolha = input("Digite o número de conversão desejada: ")
+
+        if escolha == "1":
+            metros = float(input("Digite o valor em metros: "))
+
+            print(f"{metros} metros são {metros / 1000} Quilometros. ")
+          
+      elif escolha == "2":
+           gramas = float(input("Digite o valor em gramas: "))
+
+            print(f"{gramas} gramas são {gramas / 1000} Quilogramas. ")
+      elif escolha == "3":
+           centimetros = float(input("Digite o valor em centimetros: "))
+          print(f"{centimetros} centimetros são {centimetros / 100} metros ")
+     elif escolha == "4":
+          print("saindo...")
+          break
+      else:
+            print("Opção inválida. Tente novamente. ")
+
+
+#EXEMOLO DE USO:
+converter_unidades()
