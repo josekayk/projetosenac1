@@ -1,0 +1,29 @@
+import re
+
+
+
+def validar_senha(senha):
+
+    if (len(senha) >= 8 and
+
+        re.search(r"[A-Z]", senha) and
+
+        re.search(r"[a-z]", senha) and
+
+        re.search(r"\d", senha) and
+
+        re.search(r"[!@#$%^&*(),.?\":{}|<>]", senha)):
+
+        return True
+
+    else:
+
+        return False
+
+
+
+# Exemplo de uso:
+
+senha = "Exemplo1!"
+
+print(f"A senha '{senha}' é válida: {validar_senha(senha)}")
