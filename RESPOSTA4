@@ -1,0 +1,23 @@
+def contagem_frequencia(s):
+
+    frequencia = {}
+
+    for char in s:
+
+        if char in frequencia:
+
+            frequencia[char] += 1
+
+        else:
+
+            frequencia[char] = 1
+
+    return frequencia
+
+
+
+# Exemplo de uso:
+
+texto = "exemplo de string"
+
+print(contagem_frequencia(texto))
