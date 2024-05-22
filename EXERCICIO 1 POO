@@ -7,9 +7,9 @@ class Pessoa:
 
     def envelhecer(self):
         self.idade += 1
-        if self.altura < 21:
-            self.crescer (0.5)
-
+        if self.idade < 21:
+            self.crescer(0.5)
+    
     def engordar(self, peso):
         self.peso += peso
 
@@ -19,17 +19,16 @@ class Pessoa:
     def crescer(self, altura):
         self.altura += altura
 
-
-    def _str_(self):
-        return f'Nome: {self.nome}, idade: {self.idade} anos, peso: {self.peso}, altura: {self.altura}cm'
-
-
-pessoa1 = Pessoa("João", 19, 54, 163)
-print("Dados iniciais: ")
+    def __str__(self):
+        return f"Nome: {self.nome}, Idade: {self.idade}, Peso: {self.peso}, Altura: {self.altura}"
+    
+pessoa1 = Pessoa("João", 20, 150, 165)
+print("Dados Iniciais: ")
 print(pessoa1)
-
+    
 pessoa1.envelhecer()
 pessoa1.engordar(10)
 
-print("Dados após envelhecer e engordar")
+print("Dados após envelhecer e engordar: ")
 print(pessoa1)
+
