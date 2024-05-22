@@ -1,0 +1,178 @@
+                                           *NOTA1*    
+DEF soma ( a,b  ) : informa 2 numeros.               colocar no final= soma(1,5) 
+ a+b= r
+ print(r)
+
+a + b e igual uma soma fixa, asssim como a+b+c assim sucetivamente.
+
+CNF= inicio, meio e fim
+
+SE- IF em ingles. PASSA uma condição
+SENÃO-ELSE NAO PASSA condição
+!= -DIFERENÇA 
+
+RETURN SALVA SEUS CODECOS. FIQUE ATENTO COM ISSO :D ou seja, os deixa acessiveis
+criar uma variavel para salvar, porém tem outras formas de salvar.
+
+calculo fatorial: conhecido como ! exemplo: 50!/ 5! e igual a 5.4.3.2.1
+como saber ate quando multiplicar. Como criar a lojica?
+a logica tradicional não serve, porém a programação entende isso, pois temos a calculadora.
+modulo criado: PARA-FOR, uma estrutura de repetição para repetir, contudo precisamos saber o tempo de intervalo da situação.
+ou seja temos um padrão para completar.
+
+NOTA> estudar sobre repetçaõ
+
+3.4.3.2.1
+20.3.2.1
+60.2.1
+120.1=120
+
+segunda feira evento na sala, maratona de programação, sexta fica para o projeto integrador.
+temas para o projeto??? banco de dados? quem sabe? como escolher? votaçaõ ou sorteio?
+
+IMPUT --> S/ ENTRADA dizer o tipo de entrada, precisa entender o tipo do INPUT.
+COMO FAZER ISSO?: criando uma variavel e adicionando ao INPUT 
+
+                                           *NOTA2*
+DEF Nome_da_funçao ( parametro ):
+ (...)
+estruturas de controles, que servem para controlar os códicos.
+a=10 estamos atribuindo o 10 a variavel ( a )
+a==10 e igual a ( A )
+a==b
+a!=10 significas que sao diferfentes do (a)                         ja sabemos
+!=b
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+                                                  *PROJETO INTEGRADOR*
+
+ fazer um códico completo, tanto na parte visual como na forma externa. Veremos sé tem algum bug e colocaremos na ativa para assim ver se atinjirmos-
+o objetivo.
+ introdução:
+      oque é o projeto integrador?
+Opções de projeto
+  Opção 1;
+  Opção 2;
+  Opção personalizada.
+  debates sobre o tema personalizado.
+
+       *um projeto prático desenvolvido por VOCêS*
+     O instrutor so deve nos guiar, não ajudar.
+
+todos os projetos devem englobar conceitos das disciplinas do segundo bloco:
+
+ UC01 - Desenvolver Sistemas de informação; -> DOCUMENTAÇÃO E ALGORITIMO BASE
+ UC02 - Implementar Banco de dados; banco de dados  -> enserir, editar é remover 
+ UC03 - realizar teste e manutenção do sistema de informação; -> testes para obter a resoluções de erros.
+
+ projeto 1 --> tema: Demandas de organização e controle em sistemas de informação.
+Desenvolver um modulo, para resolver problemas determinados, devemos produzir desde o levantamento de requisitos, validação do sistema até os testes finais.
+ Deve-se considerar, ainda, a dinÂmica do segmento de tecnologias. 
+
+projeto 2 --> tema: criação de um sistema para pessoas deficiÊncia. 
+ algo para ampliar a tecnologia para um publico com deficiÊncia.
+ _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+                                                      AULA 3
+LISTA DE CODS
+
+a = 10
+ma = 28
+vi = 16
+fe = 21
+w = 60
+ma = 30
+
+x = [ ] 
+x = [ 1, 2.3, "a", tru, 70]
+
+x(0) = 1
+x(1) = 2.3
+(...)
+
+BOOL = true, false
+
+LISTAS: podem utilizar int, float e string
+
+listas sao uma quatidade grande de valores incluidas em uma interface, listas nao se ligam ao valor é sim pela posição;
+
+usar listas para guardar coisas que o usuario mandar ou quier, onde ele  nao tem acesso.  Ouseja vc tem que criar algo que fassa o usuario
+entrar na lista sem usar o seu cod.
+
+i(n1,n2) o zero
+
+a.ppend(4) e utilizado para adicionar coisas a lista
+
+o comando a.insert() e utilizado para adicionar coisas a lista sempre empurrando os outros numeros começando do 2
+
+1, 2, 3 coloca a.insert cria uma onda, pois empurramos todos os números depois do 1. Exemplo:[1,  2, 3etc..
+
+como remover o comando? utilizando o comando a.remove() e no parentese adicionar oque vc quer que seja removido
+removendo o 2 o programa empurra tudo, exemplo: de 1,5,2,3 vai para 1,5,3
+
+o comando ultimo_elemento = a.pop() sempre remove o ultimo iten da lista, permite que vc salve os elementos da sua lista, para que vc possa ver todos os seus itens que vc removeu. Ou seja uma lixeira
+
+uma lista pode armazenar outras listas, ( criar listas com itens removidos )
+
+commandos alternativos; "del a [0] " deleta qualquer tipo de elemento em qualquer posição
+
+não sabemos o tamanho da nossa lista, entao vamos usar um comando para saber o tamanho da sua lista, o " len(a)", porém o zero nao conta por ser o primeniro numero e sepre vai ter 1 amenos. Exemplo; len(a) 999, não sera 1000 por conta do zero
+sum(a) soma todos os itens da lista se for somar os valores das listas
+
+ferramenta GIT, uma plataforma que serve para criar um tipo de pasta especifica que servem para vontrolar e salvars os seus arquivos
+
+especificar o tipo para não ser uma estring em todos os nomentos.
+
+{} pode ser usados para criar uma biblioteca.
+_______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+                                                                                     AULA 4
+
+
+Oque e biblioteca?
+são conjuntos de códicos pré-escritos que podem ser utilizados para agilizar o desenvolvimento de softwares. Contendo funções, classes, métodos e outros componentes que podem ser reutilizados.
+bliblioteca e uma coleção de recursos usados por programas de computadores. qual a diferença entre a biblioteca e framework? a biblioteca ajuda a construir um projeto, já o framework são usados como o esqueleto para o projeto. 
+
+( esdudar o conceito de função )
+
+for e  in sao usados para percorrer a sau lista toda
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+                                                                                 AULA 5 + EXERCICIOS
+
+
+
+
+digitar lista, soma os numeros
+utilizar função e lista
+
+usar o if para gerar uma condiçao
+
+
+
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+criar um programa que converta unidades de medida, permitindo multiplas funsões até que o usuario decida sair.
+criar função chamada converter_unidade
+dentro
+
+
+
+isinstance(numero, int): Esta condição verifica se o parâmetro numero é do tipo inteiro. Se não for, ou seja, se for uma string, float ou outro tipo, a função retorna uma mensagem pedindo um número inteiro.
+
+numero < 0: Esta condição verifica se o número é negativo. Se for, a função também retorna uma mensagem pedindo um número não negativo.
+
+Se você passar um número inteiro não negativo para a função, ela calculará o fatorial normalmente. Caso contrário, ela retornará uma mensagem indicando o problema.
+
+
+
+
+
+
+
+
+
+
+
+
+
