@@ -1,0 +1,21 @@
+# Realizamos a importação da boblioteca SQLite
+import sqlite3
+
+#Abrimos a conexão e atribuimos ela a uma variavel
+conexao = sqlite3.connect('exemplo.db')
+#Utilizamos as opções presentes na conexão
+cursor = conexao.cursor()
+
+#Executamos uma tarefa: criamos uma tabela caso ela não exista, especificamos os campos
+# que precisam ser preenchidas com nome do campo, tipo de campo e ,caso precise,
+# chave primária
+cursor.execute('''
+    CREATER TABLE IF NOT EXISTES usuarios(
+         id INTEGER PRIMARY KEY,
+        nome TEXT,
+        idade INTEGER
+    )
+            ''')
+
+#Fechamos a conexão com o banco
+conexao.close()
