@@ -1,0 +1,18 @@
+# Realizamos a importação da boblioteca SQLite
+import sqlite3
+
+#Abrimos a conexão e atribuimos ela a uma variavel
+conexao = sqlite3.connect('exemplo.db')
+#Utilizamos as opções presentes na conexão
+cursor = conexao.cursor()
+
+# Realizamos a operação de inserir dados nos campos informados e colocamos placenolders
+# em seguida nós informamos os dados
+cursor.execute('INSERT INTO usuario (nome, idade) VALUES (?, ?)', ('Alice', 30))
+cursor.execute('INSERT INTO usuario (nome, idade) VALUES (?, ?)', ('Marcos', 25))
+
+#Comprometemos nossa alteração  para o banco
+conexao.commit()
+
+#Fechamos a conexão do banco de dados
+conexao.close()
