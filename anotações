@@ -1,0 +1,17 @@
+
+PYTHON, JAVA ETC, LIDA COM A LOGICA DA FUNÇÃO
+
+SQLITE3 trata do seu resuldato
+
+IDS sao importantes para a programação; pois cada id e unico, não possuindo 2 ids iguais
+se nao colocarmos o id, o proprio sistema o coloca por vc
+
+chave primaria encontra o relacionamento daquela tabela determinada
+os comandos sao padronizados, so mudamos a maneirs de como usamos eles
+
+VALUES (?,  ?) PLACE ROUDER, SERVE PARA GUARDAR LUGAR
+
+COMMIT diz que tudo no valaus\place rouder confimar que tudo nisso foi confimado\enviado
+
+gargalo trava as informaçoes que entram de forma descontrolada
+se nao criarmos uma "pilha" ele trava por conta do acumulo de informação
