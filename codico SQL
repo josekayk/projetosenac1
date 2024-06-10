@@ -1,0 +1,54 @@
+* CRIAR UMA TABELA
+
+import sqlite3
+
+# Conectar ao banco de dados
+conexao = sqlite3.connect('exemplo.db')
+cursor = conexao.cursor()
+
+# Inserir dados
+cursor.execute('INSERT INTO usuarios (nome, idade) VALUES (?, ?)', ('Alice', 30))
+cursor.execute('INSERT INTO usuarios (nome, idade) VALUES (?, ?)', ('Bob', 25))
+
+# Commit para salvar as alterações
+conexao.commit()
+
+# Fechar a conexão
+conexao.close()
+
+ *INSERIR DADOS
+
+import sqlite3
+
+# Conectar ao banco de dados
+conexao = sqlite3.connect('exemplo.db')
+cursor = conexao.cursor()
+
+# Inserir dados
+cursor.execute('INSERT INTO usuarios (nome, idade) VALUES (?, ?)', ('Alice', 30))
+cursor.execute('INSERT INTO usuarios (nome, idade) VALUES (?, ?)', ('Bob', 25))
+
+# Commit para salvar as alterações
+conexao.commit()
+
+# Fechar a conexão
+conexao.close()
+
+* EXCLUIR DADOS
+
+import sqlite3
+
+# Conectar ao banco de dados
+conexao = sqlite3.connect('exemplo.db')
+cursor = conexao.cursor()
+
+# Excluir dados
+cursor.execute('DELETE FROM usuarios WHERE id = ?', (1,))
+
+# Commit para salvar as alterações
+conexao.commit()
+
+# Fechar a conexão
+conexao.close()
+
+*
