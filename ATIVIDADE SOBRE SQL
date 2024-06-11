@@ -1,0 +1,78 @@
+import sqlite3
+
+class BancoDeDados:
+    def __init__(self, nome_db):
+        self.conexao = sqlite3.connect(nome_db)
+        self.cursor = self.conexao.cursor()
+
+    def criar_tabela_contas(self):
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS contas (
+                numero_conta INTEGER PRIMARY KEY,
+                nome_titular TEXT,
+                saldo REAL
+            )
+        """)
+        self.conexao.commit()
+
+    def salvar_conta(self, numero_conta, nome_titular, saldo):
+        self.cursor.execute("""
+            INSERT OR REPLACE INTO contas (numero_conta, nome_titular, saldo)
+            VALUES (?, ?, ?)
+        """, (numero_conta, nome_titular, saldo))
+        self.conexao.commit()
+
+    def atualizar_saldo(self, numero_conta, novo_saldo):
+        self.cursor.execute("""
+            UPDATE contas
+            SET saldo = ?
+            WHERE numero_conta = ?
+        """, (novo_saldo, numero_conta))
+        self.conexao.commit()
+
+class ContaBancaria:
+    def __init__(self, numero_conta, nome_titular, saldo, banco_dados):
+        self.numero_conta = numero_conta
+        self.nome_titular = nome_titular
+        self.saldo = saldo
+        self.banco_dados = banco_dados
+
+        self.banco_dados.salvar_conta(numero_conta, nome_titular, saldo)
+
+    def deposito(self, valor):
+        self.saldo += valor
+        self.banco_dados.atualizar_saldo(self.numero_conta, self.saldo)
+
+    def saque(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            self.banco_dados.atualizar_saldo(self.numero_conta, self.saldo)
+        else:
+            print("Saldo insuficiente.")
+
+    def transferencia(self, conta_destino, valor):
+        if self.saldo >= valor:
+            self.saque(valor)
+            conta_destino.deposito(valor)
+        else:
+            print("Saldo insuficiente para transferência.")
+
+    def consultar_saldo(self):
+        return self.saldo
+
+
+if __name__ == "__main__":
+    banco = BancoDeDados("banco.db")
+    banco.criar_tabela_contas()
+
+    conta1 = ContaBancaria(1, "João", 1000, banco)
+    conta2 = ContaBancaria(2, "Maria", 500, banco)
+
+    conta1.deposito(200)
+    conta2.saque(100)
+    conta1.transferencia(conta2, 300)
+
+    print("Saldo conta 1:", conta1.consultar_saldo())
+    print("Saldo conta 2:", conta2.consultar_saldo())
+
+    banco.conexao.close()
