@@ -1,0 +1,122 @@
+import sqlite3
+
+class BancoDeDados:
+    def __init__(self, nome_banco):
+        self.conexao = sqlite3.connect(nome_banco)
+        self.cursor = self.conexao.cursor()
+
+    def configurar_banco(self):
+        self.cursor.execute("""
+            CREATE TABLE IF NOT EXISTS contas (
+                numero_conta INTEGER PRIMARY KEY,
+                nome_titular TEXT,
+                saldo REAL
+            )
+        """)
+        self.conexao.commit()
+
+    def salvar_conta(self, numero_conta, nome_titular, saldo):
+        self.cursor.execute("""
+            INSERT OR REPLACE INTO contas (numero_conta, nome_titular, saldo)
+            VALUES (?, ?, ?)
+        """, (numero_conta, nome_titular, saldo))
+        self.conexao.commit()
+
+    def atualizar_saldo(self, numero_conta, novo_saldo):
+        self.cursor.execute("""
+            UPDATE contas
+            SET saldo = ?
+            WHERE numero_conta = ?
+        """, (novo_saldo, numero_conta))
+        self.conexao.commit()
+
+class ContaBancaria:
+    def __init__(self, numero_conta, nome_titular, saldo, banco_de_dados):
+        self.numero_conta = numero_conta
+        self.nome_titular = nome_titular
+        self.saldo = saldo
+        self.banco_de_dados = banco_de_dados
+
+        self.banco_de_dados.salvar_conta(numero_conta, nome_titular, saldo)
+
+    def deposito(self, valor):
+        self.saldo += valor
+        self.banco_de_dados.atualizar_saldo(self.numero_conta, self.saldo)
+
+    def saque(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            self.banco_de_dados.atualizar_saldo(self.numero_conta, self.saldo)
+        else:
+            print("Saldo insuficiente.")
+
+    def transferencia(self, outra_conta, valor):
+        if self.saldo >= valor:
+            self.saque(valor)
+            outra_conta.deposito(valor)
+        else:
+            print("Saldo insuficiente para transferência.")
+
+    def consultar_saldo(self):
+        return self.saldo
+
+class BancoDeDados:
+    def salvar_conta(self, numero_conta, nome_titular, saldo):
+        self.cursor.execute("""
+            INSERT OR REPLACE INTO contas (numero_conta, nome_titular, saldo)
+            VALUES (?, ?, ?)
+        """, (numero_conta, nome_titular, saldo))
+        self.conexao.commit()
+
+    def atualizar_saldo(self, numero_conta, novo_saldo):
+        self.cursor.execute("""
+            UPDATE contas
+            SET saldo = ?
+            WHERE numero_conta = ?
+        """, (novo_saldo, numero_conta))
+        self.conexao.commit()
+
+class ContaBancaria:
+    def __init__(self, numero_conta, nome_titular, saldo_inicial, banco_de_dados):
+        self.numero_conta = numero_conta
+        self.nome_titular = nome_titular
+        self.saldo = saldo_inicial
+        self.banco_de_dados = banco_de_dados
+
+        self.banco_de_dados.salvar_conta(numero_conta, nome_titular, saldo_inicial)
+
+    def deposito(self, valor):
+        self.saldo += valor
+        self.banco_de_dados.atualizar_saldo(self.numero_conta, self.saldo)
+
+    def saque(self, valor):
+        if self.saldo >= valor:
+            self.saldo -= valor
+            self.banco_de_dados.atualizar_saldo(self.numero_conta, self.saldo)
+        else:
+            print("Saldo insuficiente.")
+
+    def transferencia(self, outra_conta, valor):
+        if self.saldo >= valor:
+            self.saque(valor)
+            outra_conta.deposito(valor)
+        else:
+            print("Saldo insuficiente para transferência.")
+
+    def consultar_saldo(self):
+        return self.saldo
+
+if __name__ == "__main__":
+    banco = BancoDeDados("banco.db")
+
+    conta1 = ContaBancaria(1, "João", 1000, banco)
+    conta2 = ContaBancaria(2, "Maria", 500, banco)
+
+    conta1.deposito(200)
+    conta2.saque(100)
+    conta1.transferencia(conta2, 300)
+
+    print("Saldo conta 1:", conta1.consultar_saldo())
+    print("Saldo conta 2:", conta2.consultar_saldo())
+
+    banco.conexao.close()
