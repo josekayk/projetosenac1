@@ -1,0 +1,40 @@
+import sqlite3
+
+class BancoDeDados:
+  def __unit__(self, nome_banco="banco.db"):
+     self.nome_banco = nome_banco
+     self.conn = sqlite3.connect(self.nome_banco)
+     self.cursor = self.conn.cursor()
+     self.configurar_banco()
+     
+  def configurar_banco(self):
+    self.cursor.execute('''
+        CREATE TABLE IF NOT EXISTS contas(
+          numero_conta TEXT PRIMARY KEY,
+          nome_titular TEXT,
+          saldo REAL
+
+        (
+    ''')
+    self.conn.commit()
+
+  def inserir_dados(self, numero_conta, nome_titular, saldo):
+    self.cursor.execute('''
+        INSERIR OF REPLACE INTO contas (numero_conta, nome_titular, saldo) VALUES (?, ?, ?)''', (numero_conta, nome_titular, saldo))
+    self.conn.commit
+
+  def atualizar_campo(self, saldo, numero_conta):
+    self.cursor.execute('''
+        UPDATE contas SET = ? WHERE numero_conta = ?
+    ''', (saldo, numero_conta))
+    self.conn.commit()
+
+  self.conn.close()
+
+
+class ContaBancaria:
+  def __unit__(self, nome_titular, numero_conta, saldo_inicial = 0, banco_de_dados = None):
+    self.nome_titular = nome_titular
+    self.numero_conta = numero_conta
+    self.saldo = saldo_inicial
+    self.banco_de_dados = banco_de_dados
