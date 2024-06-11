@@ -1,0 +1,61 @@
+**Definição das Classes**
+Classe ItemEstoque:
+
+- Defina uma classe para representar um item no estoque. Essa classe deve armazenar as informações do item como nome, marca, modelo, preço e quantidade.
+Inclua um método para exibir as informações do item.
+Classe Estoque:
+
+- Defina uma classe para gerenciar o estoque. Esta classe deve ter uma conexão com o banco de dados SQLite.
+- Inclua métodos para adicionar, remover, atualizar e exibir itens do estoque, bem como calcular o valor total do estoque.
+
+**Configuração do Banco de Dados**
+
+Conectar ao Banco de Dados SQLite:
+
+- Na classe Estoque, estabeleça uma conexão com o banco de dados SQLite.
+Garanta que o banco de dados será criado se não existir.
+Criação da Tabela de Itens:
+
+- Crie uma tabela para armazenar os itens do estoque, se ainda não existir. A tabela deve ter colunas para nome, marca, modelo, preço e quantidade.
+
+**Implementação das Funcionalidades**
+
+Adicionar Itens ao Estoque:
+
+-Implemente um método na classe Estoque para adicionar novos itens ao banco de dados.
+- Inclua validações para garantir que todos os campos necessários sejam preenchidos corretamente.
+- Remover Itens do Estoque:
+
+- Implemente um método na classe Estoque para remover itens do banco de dados com base no nome do item.
+- Atualizar Quantidade de Itens:
+
+- Implemente um método na classe Estoque para atualizar a quantidade de um item existente no banco de dados.
+- Permita que a quantidade seja aumentada ou diminuída.
+- Exibir Informações do Estoque:
+
+- Implemente um método na classe Estoque para exibir todos os itens armazenados no banco de dados.
+- Formate a saída de forma legível para facilitar a visualização.
+Calcular Valor Total do Estoque:
+
+Implemente um método na classe Estoque para calcular e retornar o valor total do estoque, multiplicando o preço pela quantidade de cada item.
+
+**Interface do Usuário**
+
+Menu Interativo:
+
+- No arquivo principal, crie um menu interativo que permita ao usuário escolher diferentes operações (adicionar item, remover item, atualizar quantidade, exibir informações, calcular valor total e sair).
+Use um loop para manter o programa em execução até que o usuário escolha sair.
+Coleta de Dados do Usuário:
+
+- Solicite ao usuário as informações necessárias para cada operação escolhida no menu.
+Valide as entradas do usuário para evitar erros e inconsistências.
+**Testes e Validação**
+Teste de Funcionalidades:
+
+- Teste cada funcionalidade individualmente para garantir que elas estão funcionando corretamente.
+- Adicione, remova, atualize e exiba itens no estoque, verificando se as operações refletem corretamente no banco de dados.
+
+Verificação de Erros:
+
+- Teste cenários de erro, como tentar remover ou atualizar um item que não existe, e verifique se o programa trata esses casos adequadamente.
+Garanta que mensagens de erro amigáveis sejam exibidas para o usuário.
