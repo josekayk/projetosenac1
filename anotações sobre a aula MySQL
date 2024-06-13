@@ -1,0 +1,35 @@
+	SQLITE: possui porte pequeno. Bom para projetos pequenos,usado para aprendizado
+         -----> "menor";
+			Local Onde se encontra no seu pc, por tanto gera poucas consultas;
+
+
+criar um arquivo com .sql
+
+
+só posso fazer alteração apos determinar qual arquivo eu quero que seja alterado
+
+
+senha MySQL: senac
+
+
+auto_incremento ele fornece e o torna unico. assim deixando com que cada arquivo ou algo parecido tenha seu proprio id
+
+
+
+---> SQL
+       --> Existem diferenças entre os comandos usados em python até agora
+
+no MySQLIT podemos escolher a parte que queremos executar, porém isso se tornara um problema pois quando formos executar o comando codico
+
+
+para iniciar um comentario
+
+
+probelas que um programador pode ter ao executar um comando errado no MySQLIT, pesquisar sobre problemas apresentados em empresas
+
+COMANDO PARA REALIZAR OPERAÇÃO, DPS PASSO PARA QUEM SERA A CHAVE ESTRANGEIRA E DPS INFORMO QM E
+
+
+padrao da data, ano, mês e dia
+
+estoque, conta bancaria e tabela
